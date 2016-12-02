@@ -11,6 +11,7 @@ on exit: clean up txt file duplicate entry
 
 admin cases:
 view library, delete entries, delete users, exit
+
 on view library: verifies raw user input (matches eyes) and shows users + eyes
 
 on delete entry: remove 1 eye from list
