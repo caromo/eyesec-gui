@@ -7,6 +7,8 @@
 #include <QPixmap>
 #include <QGraphicsPixmapItem>
 #include <string>
+#include <vector>
+#include <fstream>
 
 namespace Ui {
 class eye_sec_user;
@@ -22,10 +24,16 @@ public:
 
 private slots:
 
-    void on_submit_button_clicked();
+    void on_submit_clicked();
 
 private:
     Ui::eye_sec_user *ui;
 };
+
+void check_valid(QString input);
+std::vector<QString> initialize_namelist(std::vector<QString> list);
+void set_username(std::vector<QString> namelist, QString name);
+void import_picture();
+void save_changes(std::vector<QString>);
 
 #endif // EYE_SEC_USER_H

@@ -12,7 +12,10 @@ eye_sec_user::~eye_sec_user()
     delete ui;
 }
 
-void eye_sec_user::on_submit_button_clicked()
+void eye_sec_user::on_submit_clicked()
 {
-    QString text = ui->text_input->toPlainText();
+    QString filename = ui->filename_field->toPlainText();
+    QString name = ui->name_field->toPlainText();
+
+
 }
