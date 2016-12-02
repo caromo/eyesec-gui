@@ -10,6 +10,10 @@ std::vector<QString> initialize_namelist(std::vector<QString> list) {
 }
 void save_changes(std::vector<QString> list) {
     std::ofstream file_out;
+    file_out.open("test.txt", std::ios::out);
+    for (int i = 0; i < list.size(); i++) {
+        file_out << "'" << list[i].toUtf8().constData() << "'" << std::endl;
+    }
 }
 
 int main(int argc, char *argv[])
