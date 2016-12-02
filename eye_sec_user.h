@@ -26,14 +26,18 @@ private slots:
 
     void on_submit_clicked();
 
+    void on_exit_button_clicked();
+
+
 private:
     Ui::eye_sec_user *ui;
 };
 
 void check_valid(QString input);
-std::vector<QString> initialize_namelist(std::vector<QString> list);
+std::vector<QString> initialize_namelist();
 void set_username(std::vector<QString> namelist, QString name);
 void import_picture();
-void save_changes(std::vector<QString>);
+void save_changes(QString name, QString filename);
+
 
 #endif // EYE_SEC_USER_H
