@@ -1,0 +1,16 @@
+user:
+
+can submit file and name (computer authenticates) 
+
+
+if submit successful, if name matches a person already there, they can
+remove or add eye from their person
+
+if it doesnt, access denied message
+
+admin:
+	can do the authentication method, but they can still change things even if access denied message comes up (override system)
+	can add and remove people
+	add and remove eyes
+	add/remove pictures
+	
