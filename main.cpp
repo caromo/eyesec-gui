@@ -14,8 +14,7 @@ std::vector<QString> initialize_namelist() {
     return result;
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     std::string input;
     std::vector<QString> initial_name_list;
     initial_name_list = initialize_namelist();
