@@ -13,7 +13,15 @@ eye_sec_admin::~eye_sec_admin()
     delete ui;
 }
 
+void load_eyelist() {
+    std::string line;
+    std::ifstream my_file;
+    my_file.open("test.txt");
+    while (std::getline(file_in, line)) {
+    }
+    my_file.close();
 
+}
 
 void unduplicate() {
 

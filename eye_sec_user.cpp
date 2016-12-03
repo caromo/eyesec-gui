@@ -18,6 +18,7 @@ void eye_sec_user::on_submit_clicked() {
     QString filename = ui->filename_field->toPlainText();
     QString name = ui->name_field->toPlainText();
     save_changes(name, filename);
+    //if statement for compare methods: if true, add item to eye library
 }
 
 void eye_sec_user::on_exit_button_clicked() {
@@ -29,9 +30,7 @@ void save_changes(QString name, QString filename) {
     std::ofstream file_out;
     file_out.open("test.txt", std::ios_base::app);
     if (name.isEmpty() || filename.isEmpty()) {
-
-    }
-    else {
+    } else {
         file_out << name.toUtf8().constData() << " - " << filename.toUtf8().constData() << std::endl;
         file_out.close();
     }
