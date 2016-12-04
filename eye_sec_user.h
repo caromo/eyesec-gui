@@ -9,6 +9,8 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <iostream>
+#include <cstring>
 
 namespace Ui {
 class eye_sec_user;

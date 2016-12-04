@@ -17,7 +17,7 @@ void load_eyelist() {
     std::string line;
     std::ifstream my_file;
     my_file.open("test.txt");
-    while (std::getline(file_in, line)) {
+    while (std::getline(my_file, line)) {
     }
     my_file.close();
 
