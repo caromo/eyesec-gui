@@ -1,7 +1,6 @@
 #include "eye_sec_user.h"
 #include "ui_eye_sec_user.h"
 
-
 eye_sec_user::eye_sec_user(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::eye_sec_user){
@@ -17,8 +16,15 @@ eye_sec_user::~eye_sec_user() {
 void eye_sec_user::on_submit_clicked() {
     QString filename = ui->filename_field->toPlainText();
     QString name = ui->name_field->toPlainText();
-    save_changes(name, filename);
-    //if statement for compare methods: if true, add item to eye library
+    int index = filename.toInt();
+    Person to_add(name.toUtf8().constData());
+    people.push_back(to_add);
+    std::vector <std::vector <Pixel> > a = lib->getPicture(0);
+    Parser pa(a);
+    std::vector<Pixel> irisArray = pa.getIrisArray();
+    people[0].addIrisInstance(irisArray);
+
+
 }
 
 void eye_sec_user::on_exit_button_clicked() {

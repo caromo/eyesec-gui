@@ -19,7 +19,8 @@ SOURCES += main.cpp\
 
 HEADERS  += eye_sec_user.h \
     user_input_error.h \
-    eye_sec_admin.h
+    eye_sec_admin.h \
+    eyesecurity.h
 
 FORMS    += \
     eye_sec_user.ui \

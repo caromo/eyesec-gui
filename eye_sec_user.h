@@ -11,6 +11,15 @@
 #include <fstream>
 #include <iostream>
 #include <cstring>
+#include <stdlib.h>
+#include "eye_sec_user.h"
+#include "Pixel.h"
+#include "lodepng.h"
+#include "Compare.h"
+#include "Parser.h"
+#include "pictureConvert.h"
+#include "Person.h"
+#include "eyelibrary.h"
 
 namespace Ui {
 class eye_sec_user;
@@ -40,6 +49,7 @@ std::vector<QString> initialize_namelist();
 void set_username(std::vector<QString> namelist, QString name);
 void import_picture();
 void save_changes(QString name, QString filename);
-
+std::vector<Person> people;
+eyeLibrary *lib = new eyeLibrary();
 
 #endif // EYE_SEC_USER_H
