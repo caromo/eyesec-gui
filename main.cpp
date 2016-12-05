@@ -1,6 +1,7 @@
 #include "eye_sec_user.h"
 #include <QApplication>
 
+//loads in list of names for People list
 std::vector<QString> initialize_namelist() {
     std::vector<QString> result;
     std::string line;
@@ -26,17 +27,25 @@ void admin_client() {
 }
 int getPerson(std::vector<Person> people, std::string name) {
     int result;
+    bool has_been_matched = false;
     if (people.size() == 0) {
-        return 0;
+        return -1;
     }
     else {
+
         for (unsigned int i = 0; i < people.size(); i++) {
             if (is_equal(name, people[i].getName())) {
                 result = i;
+                has_been_matched = true;
             }
         }
     }
-    return result;
+    if (has_been_matched) {
+        return result;
+    } else {
+        return -1;
+    }
+
 }
 
 int main(int argc, char *argv[]) {
@@ -44,6 +53,7 @@ int main(int argc, char *argv[]) {
     std::cout << "Please specify which client to run: 'admin' or 'user'.\nEntry: ";
     std::cin >> input;
     std::vector<Person> people;
+    eyeLibrary lib;
     if (is_equal(input, "admin")) {
         int admin_choice = 0;
         while (admin_choice != 5) {
@@ -51,19 +61,28 @@ int main(int argc, char *argv[]) {
             std::cin >> admin_choice;
             //adding an eye index
             if (admin_choice == 1) {
-                std::cout << "Enter Person's name ";
+                std::cout << "Enter Person's name. \nEntry: ";
                 std::cin >> input;
+                if (getPerson(people, input) == -1) {
+                    std::cout << "No matching person found. \n";
+                    break;
+                } else {
+                    int person_index = getPerson(people, input);
+                    int index_number;
+                    std::cout << "Enter the exact file index of the eye to add (e.g. 2) \nEntry: ";
+                    std::cin >> index_number;
+                    //replace eyeLibraryObject with the object for eyeLibrary
+                    vector<vector<Pixel> > picture1 = lib.getPicture(index_number);
+                    Parser pars1(picture1);
+                    vector<Pixel> a = pars1.getIrisArray();
+                    people[person_index].addIrisInstance(a);
+                }
 
-                int person_index = getPerson(people, input);
-                int index_number;
-                std::cout << "Enter the exact file index of the eye to add (e.g. 2) \nEntry: ";
-                std::cin >> index_number;
-//                people[person_index].addIrisInstance(a);
 
             } //removing an eye index
 
             else if (admin_choice == 2) {
-                std::cout << "Enter Person's name ";
+                std::cout << "Enter Person's name. \nEntry: ";
                 std::cin >> input;
 
                 int person_index = getPerson(people, input);

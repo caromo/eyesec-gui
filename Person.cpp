@@ -19,14 +19,12 @@ string Person::getName()
 void Person::addIrisInstance(vector <Pixel> iris)
 {
     irisArrays.push_back(iris);
-    return;
 }
 
 //removes an iris from irisArrays
 void Person::removeIrisInstance(int index)
 {
     irisArrays.erase(irisArrays.begin() + index);
-    return;
 }
 
 //returns the iris from the given index of irisArrays
