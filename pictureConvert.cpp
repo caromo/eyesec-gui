@@ -55,7 +55,7 @@ vector <vector<Pixel> >pictureConvert::decodeOneStep(const char* filename)
     }
  
     cout<< "started RGBH to Pixel"<< endl;
-    //takes the rgb and buts it into Pixel Pixel Pixel array
+    //takes the rgb and puts it into Pixel Pixel Pixel array
     for(unsigned long int i = 0, j = 0; i < (width*height*4) && j < width*height; j++, i++){
         
         if((i+1)%4==1){
@@ -98,14 +98,14 @@ vector <vector<Pixel> >pictureConvert::decodeOneStep(const char* filename)
     
     t2=clock();
     float diff ((float)t2-(float)t1);
-    std::cout<<"Time Taken to decode: "<<diff/CLOCKS_PER_SEC<< " seconds" <<std::endl;
+    std::cout<<"Time Taken to decode: "<<diff/CLOCKS_PER_SEC<< " seconds" <<std::endl;//uses time passed to display decode time
     
     return array;
     
     
 }
 
-void pictureConvert::display(vector<vector<Pixel> > picture ){
+void pictureConvert::display(vector<vector<Pixel> > picture ){//converts the png photo into a png type
     int height  = picture.size();
     int width = picture[0].size();
     
@@ -115,7 +115,7 @@ void pictureConvert::display(vector<vector<Pixel> > picture ){
     img << width << " " << height << endl;
     img << "255" << endl;
     
-    for (int y = 0; y< height; y++) {
+    for (int y = 0; y< height; y++) {//runs through the vector of pixel objects to return the rgb values for each
         for (int x = 0; x < width; x++) {
             int r = picture[y][x].getRed();
             int g = picture[y][x].getGreen();
