@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>240</height>
+    <height>280</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>550</width>
-    <height>240</height>
+    <height>280</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>600</width>
-    <height>240</height>
+    <height>280</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -44,15 +44,15 @@
      <rect>
       <x>20</x>
       <y>60</y>
-      <width>493</width>
-      <height>87</height>
+      <width>500</width>
+      <height>106</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="file_submit_info">
        <property name="text">
-        <string>Ensure that your eye file is located in the directory, type in the file name, your name, and hit Submit.</string>
+        <string>Ensure that your eye file is located in the directory, type in the file index, your name, and hit Submit.</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -76,7 +76,7 @@
           </size>
          </property>
          <property name="text">
-          <string>File Name</string>
+          <string>Index</string>
          </property>
         </widget>
        </item>
@@ -137,7 +137,7 @@
          <property name="minimumSize">
           <size>
            <width>350</width>
-           <height>0</height>
+           <height>28</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -197,6 +197,29 @@
      <string>Exit</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="statustext">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>200</y>
+      <width>391</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="status">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>59</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Status</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -205,7 +228,7 @@
      <x>0</x>
      <y>0</y>
      <width>550</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
