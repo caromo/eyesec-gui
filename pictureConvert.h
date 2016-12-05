@@ -9,7 +9,9 @@
 #include <string>
 #include "lodepng.h"
 #include <iostream>
-
+#include <fstream>
+#include <stdio.h>
+#include "Compare.h"
 
 #include "Pixel.h"
 
@@ -21,7 +23,6 @@ public:
     pictureConvert();
     vector <vector<Pixel> >decodeOneStep(const char* filename);
     void display(vector<vector<Pixel> > picture );
-    void main();
 };
 
 

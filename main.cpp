@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
                 int index_number;
                 std::cout << "Enter the exact file index of the eye to add (e.g. 2) \nEntry: ";
                 std::cin >> index_number;
-//                people[person_index].removeIrisInstance(index_number);
+                people[person_index].removeIrisInstance(index_number);
 
             } //adding a person
             else if (admin_choice == 3) {

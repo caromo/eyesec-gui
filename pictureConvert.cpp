@@ -131,27 +131,27 @@ void pictureConvert::display(vector<vector<Pixel> > picture ){
 }
 
 
-void pictureConvert::main(){
-    cout<< "Running..."<< endl;
-    const char* filename = "/Users/Jado/Pictures/Jad.png";
+//void pictureConvert::main(){
+//    cout<< "Running..."<< endl;
+//    const char* filename = "/Users/Jado/Pictures/Jad.png";
     
-    pictureConvert a;
-    vector <vector<Pixel> > dog = a.decodeOneStep(filename);
+//    pictureConvert a;
+//    vector <vector<Pixel> > dog = a.decodeOneStep(filename);
     
-    Parser pa(dog);
-    cout<< "here" << endl;
-    vector<Pixel> irisArray = pa.getIrisArray();
-    for (int i = 0; i < irisArray.size(); i++) {
-        for (int j = 0; j < 20; j++) {
-            pa.BWArray[i][j]=irisArray[i];
-        }
+//    Parser pa(dog);
+//    cout<< "here" << endl;
+//    vector<Pixel> irisArray = pa.getIrisArray();
+//    for (int i = 0; i < irisArray.size(); i++) {
+//        for (int j = 0; j < 20; j++) {
+//            pa.BWArray[i][j]=irisArray[i];
+//        }
         
-    }
+//    }
     
-    for (int m = 660; m<850; m++) {
+//    for (int m = 660; m<850; m++) {
     
-    cout<<"[" << m << "]   "<< "red is " <<  pa.picture[540][m].getRed()<< " Green is "<< pa.picture[540][m].getGreen() <<"  blue is "<<pa.picture[540][m].getBlue() << " and brightness is " << pa.picture[540][m].getBrightness() << endl;
-    }
-    a.display(pa.BWArray);
-}
+//    cout<<"[" << m << "]   "<< "red is " <<  pa.picture[540][m].getRed()<< " Green is "<< pa.picture[540][m].getGreen() <<"  blue is "<<pa.picture[540][m].getBlue() << " and brightness is " << pa.picture[540][m].getBrightness() << endl;
+//    }
+//    a.display(pa.BWArray);
+//}
 

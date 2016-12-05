@@ -49,6 +49,8 @@ std::vector<QString> initialize_namelist();
 void set_username(std::vector<QString> namelist, QString name);
 void import_picture();
 void save_changes(QString name, QString filename);
+bool is_equal(std::string s1, std::string s2);
+int getPerson(std::vector<Person> people, std::string name);
 
 
 #endif // EYE_SEC_USER_H
