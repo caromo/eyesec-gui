@@ -1,6 +1,13 @@
 #include "eye_sec_user.h"
 #include <QApplication>
 
+//Eye Security UI - Carlo Romo
+
+//User Interface for the project - there are two types of users: users and admins
+//Users can submit eyes only if their eye matches one found in the library.
+//Admins can submit and remove eyes, regardless of comparison results.
+
+
 //loads in list of names for People list
 std::vector<QString> initialize_namelist() {
     std::vector<QString> result;
@@ -13,11 +20,15 @@ std::vector<QString> initialize_namelist() {
     file_in.close();
     return result;
 }
+
+//Checks if two strings are equal.
 bool is_equal(std::string s1, std::string s2) {
     if (0 == std::strcmp(s1.c_str(),s2.c_str())) {
         return true;
     } else return false;
 }
+
+//prints out menu
 void admin_client() {
     std::cout << "Eye Security - Admin Access\nMenu: \n" <<
                  "1. Add an eye \n2. Remove an eye\n" <<
@@ -25,6 +36,8 @@ void admin_client() {
                  "Choice entry: ";
 
 }
+
+//searches people vector for a given name.
 int getPerson(std::vector<Person> people, std::string name) {
     int result;
     bool has_been_matched = false;
@@ -50,6 +63,7 @@ int getPerson(std::vector<Person> people, std::string name) {
 
 int main(int argc, char *argv[]) {
     std::string input;
+    //user is run on a gui, admin is run on a terminal.
     std::cout << "Please specify which client to run: 'admin' or 'user'.\nEntry: ";
     std::cin >> input;
     std::vector<Person> people;
@@ -59,6 +73,7 @@ int main(int argc, char *argv[]) {
         while (admin_choice != 5) {
             admin_client();
             std::cin >> admin_choice;
+
             //adding an eye index
             if (admin_choice == 1) {
                 std::cout << "Enter Person's name. \nEntry: ";
@@ -77,10 +92,7 @@ int main(int argc, char *argv[]) {
                     vector<Pixel> a = pars1.getIrisArray();
                     people[person_index].addIrisInstance(a);
                 }
-
-
             } //removing an eye index
-
             else if (admin_choice == 2) {
                 std::cout << "Enter Person's name. \nEntry: ";
                 std::cin >> input;
@@ -99,13 +111,10 @@ int main(int argc, char *argv[]) {
                 people.push_back(p);
 
             } //removing a person
-
             else if (admin_choice == 4) {
                 std::cout << "Enter the name of the person to be removed (e.g. John Smith) \nEntry: ";
                 std::cin >> input;
                 people.erase(people.begin() + getPerson(people, input));
-
-
             } else if (admin_choice == 5) {
                 std::cout << "Exiting...\n";
             } else {
@@ -113,7 +122,8 @@ int main(int argc, char *argv[]) {
             }
         }
 
-    } else if (is_equal(input, "user")) {
+    } //launches the gui for user, code can be found in eye_sec_user.cpp
+    else if (is_equal(input, "user")) {
         QApplication a(argc, argv);
         eye_sec_user w;
         w.show();

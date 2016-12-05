@@ -14,8 +14,6 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         eye_sec_user.cpp \
-    user_input_error.cpp \
-    eye_sec_admin.cpp \
     eyeLibrary.cpp \
     pictureConvert.cpp \
     lodepng.cpp \
@@ -25,8 +23,6 @@ SOURCES += main.cpp\
     Person.cpp
 
 HEADERS  += eye_sec_user.h \
-    user_input_error.h \
-    eye_sec_admin.h \
     Compare.h \
     Parser.h \
     Person.h \

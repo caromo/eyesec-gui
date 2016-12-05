@@ -1,6 +1,12 @@
 #include "eye_sec_user.h"
 #include "ui_eye_sec_user.h"
 
+//User client GUI for Eye Security - Carlo Romo
+
+//User client is built with Qt 5.7 and Qt Creator.
+//Users can attempt to add an eye to the library, but can be restricted by the
+//compare functions.
+
 eye_sec_user::eye_sec_user(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::eye_sec_user){
@@ -12,13 +18,13 @@ eye_sec_user::~eye_sec_user() {
     delete ui;
 }
 
-
+//what happens when the submit button is clicked: searches people and eyelibrary for matching names
+//and eye indices, outputs message if compare command is successful.
 void eye_sec_user::on_submit_clicked(std::vector<Person> people, eyeLibrary lib) {
     QString filename = ui->filename_field->toPlainText();
     QString name = ui->name_field->toPlainText();
     int index = filename.toInt();
     Person to_add(name.toUtf8().constData());
-
     int indexOfPerson = getPerson(people, name.toUtf8().constData());
     Person to_compare = people[indexOfPerson];
 
@@ -33,18 +39,18 @@ void eye_sec_user::on_submit_clicked(std::vector<Person> people, eyeLibrary lib)
 
     Compare compa(iris1, iris2);
 
-    //heres the verification function that returns boolean
+    //comparison function
     if (compa.is_same_person()) {
         people.push_back(to_add);
         std::vector <std::vector <Pixel> > a = lib.getPicture(0);
         Parser pa(a);
         std::vector<Pixel> irisArray = pa.getIrisArray();
         people[0].addIrisInstance(irisArray);
-        ui->filename_field->setText("Submit successful!");
-        ui->name_field->setText("Submit successful!");
+        ui->label_2->setText("Eye Security - User Access - Submit successful.");
+        QApplication::processEvents();
     } else {
-        ui->filename_field->setText("Submit failed.");
-        ui->name_field->setText("Submit failed.");
+        ui->label_2->setText("Eye Security - User Access - Submit failed.");
+        QApplication::processEvents();
     }
 
 
