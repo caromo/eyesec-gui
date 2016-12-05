@@ -131,8 +131,7 @@ void pictureConvert::display(vector<vector<Pixel> > picture ){
 }
 
 
-int main(){
-    
+void pictureConvert::main(){
     cout<< "Running..."<< endl;
     const char* filename = "/Users/Jado/Pictures/Jad.png";
     

@@ -13,13 +13,13 @@ eye_sec_user::~eye_sec_user() {
 }
 
 
-void eye_sec_user::on_submit_clicked() {
+void eye_sec_user::on_submit_clicked(std::vector<Person> people, eyeLibrary lib) {
     QString filename = ui->filename_field->toPlainText();
     QString name = ui->name_field->toPlainText();
     int index = filename.toInt();
     Person to_add(name.toUtf8().constData());
     people.push_back(to_add);
-    std::vector <std::vector <Pixel> > a = lib->getPicture(0);
+    std::vector <std::vector <Pixel> > a = lib.getPicture(0);
     Parser pa(a);
     std::vector<Pixel> irisArray = pa.getIrisArray();
     people[0].addIrisInstance(irisArray);

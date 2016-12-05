@@ -25,7 +25,7 @@ void Person::addIrisInstance(vector <Pixel> iris)
 //removes an iris from irisArrays
 void Person::removeIrisInstance(int index)
 {
-    irisArrays.erase(index);
+    irisArrays.erase(irisArrays.begin() + index);
     return;
 }
 
@@ -41,7 +41,5 @@ vector<Pixel> Person::getAverage(int index)
 vector<Pixel> Person::getRandom()
 {
     //generates random number between 0 and the size of irisArrays
-    v1 = rand() % irisArrays.size();
-
-    return irisArrays[v1];
+    return irisArrays[rand() % irisArrays.size()];
 }

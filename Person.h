@@ -1,3 +1,6 @@
+#ifndef PERSON_H
+#define PERSON_H
+
 //
 //  Person.h
 //  Created by Alec Unland
@@ -32,3 +35,5 @@ public:
     vector<Pixel> getRandom();
         //returns a random iris from irisArrays
 };
+
+#endif

@@ -1,10 +1,13 @@
+#ifndef PIXEL_H
+#define PIXEL_H
+
 //
 // Created by Jad Zeineddine on 11/24/16.
 //
 
 #include <cmath>
 #include <iostream>
-#include "stdlib.h"
+#include <stdlib.h>
 #pragma once
 
 class Pixel {
@@ -61,3 +64,5 @@ Pixel colorConverter(int hexValue);
     Pixel();
 
 };
+
+#endif

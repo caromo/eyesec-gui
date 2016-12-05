@@ -13,8 +13,8 @@ eyeLibrary::eyeLibrary(){
 }
 
         void eyeLibrary::inputPicture(string filename){
-           pictureConvert picCon();
-           vector<vector<Pixel> > a = picCon.decodeOneStep(filename);
+           pictureConvert picCon;
+           vector<vector<Pixel> > a = picCon.decodeOneStep(filename.c_str());
            library.push_back(a);
         }
 

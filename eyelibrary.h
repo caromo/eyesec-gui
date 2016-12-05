@@ -1,3 +1,6 @@
+#ifndef EYELIBRARY_H
+#define EYELIBRARY_H
+
 #include <vector>
 #include <iostream>
 
@@ -27,3 +30,5 @@ public:
 	vector < vector <Pixel> > getPicture(int x);
 
 };
+
+#endif

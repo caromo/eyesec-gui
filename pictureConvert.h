@@ -21,7 +21,7 @@ public:
     pictureConvert();
     vector <vector<Pixel> >decodeOneStep(const char* filename);
     void display(vector<vector<Pixel> > picture );
-
+    void main();
 };
 
 

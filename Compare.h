@@ -1,3 +1,6 @@
+#ifndef COMPARE_H
+#define COMPARE_H
+
 #include <vector>
 #include <iostream>
 
@@ -20,3 +23,5 @@ public:
 	void is_same_person();
 
 };
+
+#endif

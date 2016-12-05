@@ -1,4 +1,3 @@
-#include "eyesecurity.h"
 #include "eye_sec_user.h"
 #include <QApplication>
 
@@ -25,7 +24,7 @@ void admin_client() {
                  "Choice entry: ";
 
 }
-int getPerson(std::string name) {
+int getPerson(std::vector<Person> people, std::string name) {
     int result;
     if (people.size() == 0) {
         return 0;
@@ -44,6 +43,7 @@ int main(int argc, char *argv[]) {
     std::string input;
     std::cout << "Please specify which client to run: 'admin' or 'user'.\nEntry: ";
     std::cin >> input;
+    std::vector<Person> people;
     if (is_equal(input, "admin")) {
         int admin_choice = 0;
         while (admin_choice != 5) {
@@ -54,9 +54,9 @@ int main(int argc, char *argv[]) {
                 std::cout << "Enter Person's name ";
                 std::cin >> input;
 
-                int person_index = getPerson(input);
+                int person_index = getPerson(people, input);
                 int index_number;
-                std::cout << "Enter the exact file index of the eye to add (e.g. myeye.png) \nEntry: ";
+                std::cout << "Enter the exact file index of the eye to add (e.g. 2) \nEntry: ";
                 std::cin >> index_number;
 //                people[person_index].addIrisInstance(a);
 
@@ -66,9 +66,9 @@ int main(int argc, char *argv[]) {
                 std::cout << "Enter Person's name ";
                 std::cin >> input;
 
-                int person_index = getPerson(input);
+                int person_index = getPerson(people, input);
                 int index_number;
-                std::cout << "Enter the exact file index of the eye to add (e.g. myeye.png) \nEntry: ";
+                std::cout << "Enter the exact file index of the eye to add (e.g. 2) \nEntry: ";
                 std::cin >> index_number;
 //                people[person_index].removeIrisInstance(index_number);
 
@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
             else if (admin_choice == 4) {
                 std::cout << "Enter the name of the person to be removed (e.g. John Smith) \nEntry: ";
                 std::cin >> input;
-                people.erase(people.begin() + getPerson(input));
+                people.erase(people.begin() + getPerson(people, input));
 
 
             } else if (admin_choice == 5) {

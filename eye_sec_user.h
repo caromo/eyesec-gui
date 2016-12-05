@@ -35,7 +35,7 @@ public:
 
 private slots:
 
-    void on_submit_clicked();
+    void on_submit_clicked(std::vector<Person> people, eyeLibrary lib);
 
     void on_exit_button_clicked();
 
@@ -49,7 +49,6 @@ std::vector<QString> initialize_namelist();
 void set_username(std::vector<QString> namelist, QString name);
 void import_picture();
 void save_changes(QString name, QString filename);
-std::vector<Person> people;
-eyeLibrary *lib = new eyeLibrary();
+
 
 #endif // EYE_SEC_USER_H
