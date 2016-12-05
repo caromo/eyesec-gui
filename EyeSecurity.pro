@@ -33,8 +33,4 @@ HEADERS  += eye_sec_user.h \
 
 FORMS    += \
     eye_sec_user.ui \
-    user_input_error.ui \
-    eye_sec_admin.ui
 
-RESOURCES += \
-    resources.qrc

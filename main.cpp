@@ -66,6 +66,7 @@ int main(int argc, char *argv[]) {
     //user is run on a gui, admin is run on a terminal.
     std::cout << "Please specify which client to run: 'admin' or 'user'.\nEntry: ";
     std::cin >> input;
+    //Initializing People vector and eye library
     std::vector<Person> people;
     eyeLibrary lib;
     if (is_equal(input, "admin")) {
