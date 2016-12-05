@@ -16,7 +16,7 @@ using namespace std;
 
     }
 
-
+//decodes the picture in one step
 vector <vector<Pixel> >pictureConvert::decodeOneStep(const char* filename)
 {
     
@@ -105,7 +105,7 @@ vector <vector<Pixel> >pictureConvert::decodeOneStep(const char* filename)
     
 }
 
-void pictureConvert::display(vector<vector<Pixel> > picture ){//converts the png photo into a png type
+void pictureConvert::display(vector<vector<Pixel> > picture ){//converts the png photo into a ppm type
     int height  = picture.size();
     int width = picture[0].size();
     
@@ -120,11 +120,11 @@ void pictureConvert::display(vector<vector<Pixel> > picture ){//converts the png
             int r = picture[y][x].getRed();
             int g = picture[y][x].getGreen();
             int b = picture[y][x].getBlue();
-            
+            //add them to ppm
             img << r << " " << g << " " << b <<endl;
         }
     }
-    
+    //display
     system("open pic.ppm");
     return;
     
