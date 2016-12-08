@@ -46,11 +46,9 @@ void eye_sec_user::on_submit_clicked(std::vector<Person> people, eyeLibrary lib)
         Parser pa(a);
         std::vector<Pixel> irisArray = pa.getIrisArray();
         people[0].addIrisInstance(irisArray);
-        ui->label_2->setText("Eye Security - User Access - Submit successful.");
-        QApplication::processEvents();
+        save_changes(name, filename);
     } else {
-        ui->label_2->setText("Eye Security - User Access - Submit failed.");
-        QApplication::processEvents();
+
     }
 
 
@@ -66,7 +64,8 @@ void save_changes(QString name, QString filename) {
     file_out.open("test.txt", std::ios_base::app);
     if (name.isEmpty() || filename.isEmpty()) {
     } else {
-        file_out << name.toUtf8().constData() << " - " << filename.toUtf8().constData() << std::endl;
+        int index = filename.toInt();
+        file_out << name.toUtf8().constData() << " - Index " << index << std::endl;
         file_out.close();
     }
 }

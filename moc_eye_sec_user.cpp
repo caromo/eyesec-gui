@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_eye_sec_user_t {
-    QByteArrayData data[4];
-    char stringdata0[55];
+    QByteArrayData data[8];
+    char stringdata0[97];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,11 +32,16 @@ static const qt_meta_stringdata_eye_sec_user_t qt_meta_stringdata_eye_sec_user =
 QT_MOC_LITERAL(0, 0, 12), // "eye_sec_user"
 QT_MOC_LITERAL(1, 13, 17), // "on_submit_clicked"
 QT_MOC_LITERAL(2, 31, 0), // ""
-QT_MOC_LITERAL(3, 32, 22) // "on_exit_button_clicked"
+QT_MOC_LITERAL(3, 32, 19), // "std::vector<Person>"
+QT_MOC_LITERAL(4, 52, 6), // "people"
+QT_MOC_LITERAL(5, 59, 10), // "eyeLibrary"
+QT_MOC_LITERAL(6, 70, 3), // "lib"
+QT_MOC_LITERAL(7, 74, 22) // "on_exit_button_clicked"
 
     },
     "eye_sec_user\0on_submit_clicked\0\0"
-    "on_exit_button_clicked"
+    "std::vector<Person>\0people\0eyeLibrary\0"
+    "lib\0on_exit_button_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,11 +59,11 @@ static const uint qt_meta_data_eye_sec_user[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x08 /* Private */,
-       3,    0,   25,    2, 0x08 /* Private */,
+       1,    2,   24,    2, 0x08 /* Private */,
+       7,    0,   29,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 3, 0x80000000 | 5,    4,    6,
     QMetaType::Void,
 
        0        // eod
@@ -70,12 +75,11 @@ void eye_sec_user::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         eye_sec_user *_t = static_cast<eye_sec_user *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_submit_clicked(); break;
+        case 0: _t->on_submit_clicked((*reinterpret_cast< std::vector<Person>(*)>(_a[1])),(*reinterpret_cast< eyeLibrary(*)>(_a[2]))); break;
         case 1: _t->on_exit_button_clicked(); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject eye_sec_user::staticMetaObject = {

@@ -21,6 +21,29 @@ std::vector<QString> initialize_namelist() {
     return result;
 }
 
+//loads in library with initial images
+eyeLibrary initialize_library() {
+    eyeLibrary result;
+    std::cout <<"Initializing library...\n";
+    std::string line;
+    std::ifstream file_in;
+    file_in.open("/Users/delebot/Documents/eyesec-gui/namelist.txt", std::ios::in);
+    while (std::getline(file_in, line)) {
+        result.inputPicture(line);
+        std::cout << "Added " << line << std::endl;
+    }
+    file_in.close();
+    std::cout << "...Initialized library!\n";
+    return result;
+}
+std::vector<Person> initialize_people() {
+    std::vector<Person> result;
+    result.push_back(Person("Akis"));
+    result.push_back(Person("Trenton"));
+    result.push_back(Person("Jad"));
+    return result;
+}
+
 //Checks if two strings are equal.
 bool is_equal(std::string s1, std::string s2) {
     if (0 == std::strcmp(s1.c_str(),s2.c_str())) {
@@ -60,6 +83,21 @@ int getPerson(std::vector<Person> people, std::string name) {
     }
 
 }
+bool has_name(std::vector<Person> people, std::string name) {
+    bool has_been_matched = false;
+    if (people.size() == 0) {
+        return false;
+    }
+    else {
+
+        for (unsigned int i = 0; i < people.size(); i++) {
+            if (is_equal(name, people[i].getName())) {
+                has_been_matched = true;
+            }
+        }
+    }
+    return has_been_matched;
+}
 
 int main(int argc, char *argv[]) {
     std::string input;
@@ -67,8 +105,8 @@ int main(int argc, char *argv[]) {
     std::cout << "Please specify which client to run: 'admin' or 'user'.\nEntry: ";
     std::cin >> input;
     //Initializing People vector and eye library
-    std::vector<Person> people;
-    eyeLibrary lib;
+    std::vector<Person> people = initialize_people();
+    eyeLibrary lib = initialize_library();
     if (is_equal(input, "admin")) {
         int admin_choice = 0;
         while (admin_choice != 5) {
@@ -79,7 +117,7 @@ int main(int argc, char *argv[]) {
             if (admin_choice == 1) {
                 std::cout << "Enter Person's name. \nEntry: ";
                 std::cin >> input;
-                if (getPerson(people, input) == -1) {
+                if (!has_name(people, input)) {
                     std::cout << "No matching person found. \n";
                     break;
                 } else {

@@ -52,9 +52,9 @@ public:
     {
         if (eye_sec_user->objectName().isEmpty())
             eye_sec_user->setObjectName(QStringLiteral("eye_sec_user"));
-        eye_sec_user->resize(550, 240);
-        eye_sec_user->setMinimumSize(QSize(550, 240));
-        eye_sec_user->setMaximumSize(QSize(600, 240));
+        eye_sec_user->resize(550, 280);
+        eye_sec_user->setMinimumSize(QSize(550, 280));
+        eye_sec_user->setMaximumSize(QSize(600, 280));
         centralWidget = new QWidget(eye_sec_user);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label_2 = new QLabel(centralWidget);
